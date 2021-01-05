@@ -5,24 +5,28 @@ class Home extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            data: ['1', '2', '3'],
+            data: [
+                'https://r2qn.flgwx.com/fund/banner/SJF9MY6DrjLDDU4WYibQ1LunKMvMS3TA3dn1YLZp.png',
+                'https://r2qn.flgwx.com/fund/banner/buhne31KaxyhrXMxojsP07Uhbj9uzDsVn6eykO8C.png',
+                'https://r2qn.flgwx.com/fund/banner/SJF9MY6DrjLDDU4WYibQ1LunKMvMS3TA3dn1YLZp.png'
+            ],
             imgHeight: 176
         }
     }
-    componentDidMount() {
-        // simulate img loading
-        setTimeout(() => {
-            this.setState({
-                data: ['AiyWuByWklrrUDlFignR', 'TekJlZRVCjLFexlOCuWn', 'IJOtIlfsYdTyaDTRVrLI'],
-            });
-        }, 100);
-    }
+    // componentDidMount() {
+    //     // simulate img loading
+    //     setTimeout(() => {
+    //         this.setState({
+    //             data: ['AiyWuByWklrrUDlFignR', 'TekJlZRVCjLFexlOCuWn', 'IJOtIlfsYdTyaDTRVrLI'],
+    //         });
+    //     }, 100);
+    // }
 
     render() {
         return (
             <WingBlank>
                 <Carousel
-                    autoplay={false}
+                    // autoplay={false}
                     infinite
                     beforeChange={(from, to) => console.log(`slide from ${from} to ${to}`)}
                     afterChange={index => console.log('slide to', index)}
@@ -34,7 +38,7 @@ class Home extends React.Component {
                             style={{ display: 'inline-block', width: '100%', height: this.state.imgHeight }}
                         >
                             <img
-                                src={`https://zos.alipayobjects.com/rmsportal/${val}.png`}
+                                src={val}
                                 alt=""
                                 style={{ width: '100%', verticalAlign: 'top' }}
                                 onLoad={() => {
